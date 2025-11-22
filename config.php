@@ -1,9 +1,9 @@
 <?php
-// Configuration de la base de données pour la démo
-// Choisissez le driver: 'sqlite' (par défaut) ou 'mysql'
+// Configuration centrale de la démo (DB + redirection)
+// Pilote au choix: 'mysql' (par défaut) ou 'sqlite'.
 
 return [
-    // Par défaut, utiliser MySQL si aucune variable d'env n'est fournie
+    // Pilote sélectionné (surchargé par l'env PHISH_DRIVER si présent)
     'driver' => getenv('PHISH_DRIVER') ?: 'mysql',
 
     // SQLite

@@ -1,16 +1,16 @@
 <?php
-// Vue rudimentaire des soumissions — accès par clé dans l’URL
-// Exemple: /view.php?key=changeme
+// Simple submissions viewer (protected by a query-key).
+// Access example: /view.php?key=changeme
 
 declare(strict_types=1);
 
-const VIEW_KEY = 'changeme'; // Modifiez pour votre démo locale
+const VIEW_KEY = 'changeme'; // change for your demo
 
 $key = $_GET['key'] ?? '';
 if ($key !== VIEW_KEY) {
     http_response_code(403);
     header('Content-Type: text/plain; charset=utf-8');
-    echo "Accès refusé — clé invalide";
+    echo 'Access denied: invalid key';
     exit;
 }
 
@@ -29,7 +29,7 @@ try {
         $dbPath = $config['sqlite']['path'];
         if (!file_exists($dbPath)) {
             header('Content-Type: text/plain; charset=utf-8');
-            echo "Aucune donnée (fichier DB introuvable).";
+            echo 'No data (DB file missing).';
             exit;
         }
         $pdo = new PDO('sqlite:' . $dbPath, options: [
@@ -41,7 +41,7 @@ try {
 } catch (Throwable $e) {
     http_response_code(500);
     header('Content-Type: text/plain; charset=utf-8');
-    echo 'Erreur de lecture: ' . $e->getMessage();
+    echo 'Read error: ' . $e->getMessage();
     exit;
 }
 ?>
